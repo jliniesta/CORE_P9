@@ -1,0 +1,19 @@
+<h1>
+    Add Group:
+</h1>
+
+<form method="post" action="/groups">
+
+    <div class="wideRow">
+        <label for="name" class="itemNarrow">Name:</label>
+        <input type="text" class="itemWide" id="name" name="name" value="<%= group.name %>" placeholder="Group name"
+               autocomplete="off"/>
+    </div>
+
+    <br/>
+
+    <a href="/goback" class="button">Cancel</a>
+
+    <input type="submit" value="Save">
+
+</form>

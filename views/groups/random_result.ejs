@@ -1,0 +1,28 @@
+<h1>
+    Group Play:  <%= group.name %>
+</h1>
+
+<p>
+    Successful answers = <span id="score"><%= score %></span>
+</p>
+
+<p>
+    The answer <strong> <%= answer %> </strong> is <%= result ? 'right' : 'wrong' %>.
+</p>
+
+<% if (!result) { %>
+    <p>
+        You have failed.
+    </p>
+    <p>
+        <a href="/goback" class="button">End of Play</a>
+    </p>
+
+<% } else { %>
+    <p>
+        You have succeeded.
+    </p>
+    <p>
+        <a href="/groups/<%= group.id %>/randomplay" class="button">Continue playing</a>
+    </p>
+<% } %>

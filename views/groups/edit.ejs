@@ -1,0 +1,35 @@
+<h1>
+    Configure Group: <%= group.name %>
+</h1>
+
+<form method="post" action="/groups/<%= group.id %>?_method=PUT">
+
+    <div class="wideRow">
+        <label for="name" class="itemNarrow">Name:</label>
+        <input type="text" class="itemWide" id="name" name="name" value="<%= group.name %>" placeholder="Group name"
+               autocomplete="off"/>
+    </div>
+
+    <br/>
+
+    <% for (var i in allQuizzes) { %>
+        <% var quiz = allQuizzes[i]; %>
+
+        <div>
+                <input type="checkbox"
+                       name="quizzesIds[]"
+                       value="<%= quiz.id %>"
+                       <%= groupQuizzesIds.includes(quiz.id) ? "checked" : "" %>
+                >
+                <%= quiz.question %> - <%= quiz.answer %>
+        </div>
+
+    <% } %>
+
+    <br/>
+
+    <a href="/goback" class="button">Cancel</a>
+
+    <input type="submit" value="Save">
+
+</form>

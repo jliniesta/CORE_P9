@@ -1,0 +1,20 @@
+<h1>
+    Group Play: <%= group.name %>
+</h1>
+
+<div>
+    Successful answers = <span id="score"><%= score %></span>
+</div>
+
+<form method="get" action="/groups/<%= group.id %>/randomcheck/<%= quiz.id %>">
+
+    <p>
+        Question: <b><%= quiz.question %></b>
+    </p>
+
+
+    <div class="wideRow">
+        <input type="text" class="itemWide" id="answer" name="answer" value="" placeholder="Answer" autocomplete="off"/>
+        <input type="submit" class="itemNarrow" id="send" value="Check">
+    </div>
+</form>
